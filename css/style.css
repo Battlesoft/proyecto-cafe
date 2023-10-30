@@ -1,0 +1,126 @@
+ 
+ body {
+     background-color: #f3f3f3;
+ }
+
+/*--------------------------------------------------------------------------*/
+
+ /*INICIO*/
+
+/*--------------------------------------------------------------------------*/
+ .navbar-brand {
+    display: flex;
+    align-items: center;
+}
+.navbar-brand img {
+    width: 90px;
+}
+.navbar-text {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #333;
+}
+
+ .container {
+     height: 70vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .card {
+     width: 100%;
+     max-width: 600px;
+     border: none;
+     border-radius: 10px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ }
+
+ .card img {
+    width: 30%;
+ }
+ .card-body {
+     text-align: left;
+ }
+
+ .card-title {
+     font-size: 18px;
+     color: #333;
+     margin-top: 10px;
+ }
+
+ .form-control {
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     margin: 10px 0;
+ }
+
+ .btn-primary {
+     background-color: #007bff;
+     border: none;
+     border-radius: 5px;
+ }
+
+ .btn-primary:hover {
+     background-color: #0056b3;
+ }
+
+ .img-fluid {
+     max-width: 100%;
+ }
+
+
+
+
+
+/*--------------------------------------------------------------------------*/
+
+ /*INDEX*/
+
+/*--------------------------------------------------------------------------*/
+
+
+.form-group label {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+ .navbar-brand {
+    display: flex;
+    align-items: center;
+}
+.navbar-brand img {
+    width: 90px;
+}
+.container-index {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.table {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.section {
+    border-top: 2px solid #333;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+.section h2 {
+    font-weight: bold;
+}
