@@ -130,15 +130,23 @@ window.addEventListener("load", updateTotalHours);
 
 // Mostrar el modal al cargar la página
 window.onload = function () {
-    var modal = document.getElementById('myModal');
-    modal.style.display = 'block';
+    if(localStorage.getItem('modal')){
+
+    }else {
+        var modal = document.getElementById('myModal');
+        modal.style.display = 'block';
+    }
 }
+
+
 
 // Cerrar el modal
 function closeModal() {
     var modal = document.getElementById('myModal');
     modal.style.display = 'none';
+    localStorage.setItem('modal',true);
 }
+
 
 // Acción al aceptar los términos
 function acceptTerms() {
