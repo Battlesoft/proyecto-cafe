@@ -31,6 +31,12 @@ document.getElementById("agregar-fila").addEventListener("click", function () {
     modulotd.appendChild(modulo)
     let distribuciontd = document.createElement("td");
     let distribucion = document.createElement("input");
+
+    distribucion.addEventListener('change', function(event) {
+        const valorInput = event.target.value;
+        validarFormato(valorInput);
+      });
+
     distribucion.setAttribute('type','text')
     distribucion.classList.add("horas")
     distribucion.classList.add("form-control")
@@ -122,8 +128,15 @@ function updateTotalHours() {
         }
     }
     totalHoursCell.textContent = total;
-}
 
+    // Verificar si el total supera las 18 horas y aplicar el estilo rojo
+    if (total > 18 ) {
+        totalHoursCell.classList.add("border", "bg-danger", "text-white");
+    } else {
+        // Si no supera las 18 horas, asegúrate de quitar la clase de borde rojo
+        totalHoursCell.classList.remove("border", "bg-danger", "text-white");
+    }
+}
 // Calcular el total de horas al cargar la página
 window.addEventListener("load", updateTotalHours);
 
@@ -153,3 +166,24 @@ function acceptTerms() {
     closeModal(); // Cierra el modal
     // Agrega aquí cualquier acción adicional que desees realizar después de aceptar los términos.
 }
+
+function validarFormato(inputValue) {
+    // Verificar si el valor coincide con el formato X/X/X
+    const regex = /^\d\/\d\/\d$/; // Asegúrate de que haya barras (/) entre los números
+    if (!regex.test(inputValue)) {
+      console.log('El formato no es válido. Debe ser X/X/X');
+      return;
+    }
+  
+    // Separar los números
+    const numeros = inputValue.split('/').map(Number);
+  
+    // Verificar si algún número excede 3
+    const numeroExcedeLimite = numeros.some(numero => numero > 3);
+  
+    if (numeroExcedeLimite) {
+      console.log('Al menos uno de los números excede 3');
+    } else {
+      console.log('Todos los números están dentro del límite (<= 3)');
+    }
+  }
