@@ -131,10 +131,12 @@ function updateTotalHours() {
 
     // Verificar si el total supera las 18 horas y aplicar el estilo rojo
     if (total > 18 ) {
+        totalHoursCell.classList.remove("border", "bg-danger", "text-white");
         totalHoursCell.classList.add("border", "bg-danger", "text-white");
     } else {
         // Si no supera las 18 horas, asegúrate de quitar la clase de borde rojo
         totalHoursCell.classList.remove("border", "bg-danger", "text-white");
+        totalHoursCell.classList.add("border", "bg-success", "text-white");
     }
 }
 // Calcular el total de horas al cargar la página
