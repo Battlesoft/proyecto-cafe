@@ -189,3 +189,20 @@ function validarFormato(inputValue) {
       console.log('Todos los números están dentro del límite (<= 3)');
     }
   }
+
+
+  // Click desplegable tabla
+
+  document.getElementById('toggleSection').addEventListener('click', function () {
+    var toggleableSection = document.querySelector('.toggleable-section');
+    toggleableSection.classList.toggle('hidden');
+});
+
+document.getElementById('toggleObservaciones').addEventListener('click', function () {
+    var toggleableObservaciones = document.querySelector('.toggleable-observaciones');
+    toggleableObservaciones.classList.toggle('hidden');
+});
+
+
+// Event listener para el botón #toggleSection
+document.getElementById('toggleSection').addEventListener('click', toggleSection);
