@@ -79,7 +79,6 @@
                     <tr>
                         <th>Turno (M/T)</th>
                         <th>Curso</th>
-                        <th>Ciclo</th>
                         <th>Módulo</th>
                         <th>Horas</th>
                         <th>Distribución Semanal</th>
@@ -94,18 +93,17 @@
                                 <option value="T">T</option>
                             </select>
                         </td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control horas" oninput="updateTotalHours()"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
+                        <td><select name="modulo" id="curso1" class="form-control curso"></select></td>
+                        <td><select name="modulo" id="modulo1" class="form-control modulo"></select></td>
+                        <td><input type="number" class="form-control horas" oninput="updateTotalHours()"></td>
+                        <td><select name="modulo" id="distribucion" class="form-control distribucion"></select></td>
+                        <td><select name="modulo" id="aula1" class="form-control aula"></select></td>
                         <td></td>
                     </tr>
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="4"></td>
+                        <td colspan="3"></td>
                         <td id="total-horas" class="form-control">0</td>
                         <td></td>
                         <td></td>

@@ -11,42 +11,34 @@ document.getElementById("agregar-fila").addEventListener("click", function () {
         <option value="T">T</option>
     </select>
     `;
+
     let cursotd = document.createElement("td");
     let curso = document.createElement("select")
     // aqui se puede añadir el contenido
     curso.classList.add("form-control")
     curso.classList.add("curso")
     cursotd.appendChild(curso)
-    let ciclotd = document.createElement("td");
-    let ciclo = document.createElement("select");
-    // aqui se puede añadir el contenido
-    ciclo.classList.add("ciclo");
-    ciclo.classList.add("form-control")
-    ciclotd.appendChild(ciclo)
+
     let modulotd = document.createElement("td");
     let modulo = document.createElement("select");
     // aqui se puede añadir el contenido
     modulo.classList.add("modulo");
     modulo.classList.add("form-control")
     modulotd.appendChild(modulo)
+
     let distribuciontd = document.createElement("td");
-    let distribucion = document.createElement("input");
-
-    distribucion.addEventListener('change', function(event) {
-        const valorInput = event.target.value;
-        validarFormato(valorInput);
-      });
-
-    distribucion.setAttribute('type','text')
-    distribucion.classList.add("horas")
+    let distribucion = document.createElement("select");
+    distribucion.classList.add("distribucion")
     distribucion.classList.add("form-control")
     distribuciontd.appendChild(distribucion)
+
     let aulatd = document.createElement("td");
     let aula = document.createElement("select");
     // aqui se puede añadir el contenido
     aula.classList.add("form-control")
     aula.classList.add("aula")
     aulatd.appendChild(aula);
+
     let horas = document.createElement("td");
     let horasInput = document.createElement("input");
     // aqui se puede añadir el contenido
@@ -55,8 +47,20 @@ document.getElementById("agregar-fila").addEventListener("click", function () {
     horasInput.classList.add("horas")
     horasInput.addEventListener("input", function () {
         updateTotalHours()
-    });
+        eliminarHijos(distribucion);
+        let distValues = sumasPosibles(horasInput.value)
+        console.log(distValues)
+        distValues.forEach((e) => {
+                    let newOpt = document.createElement("option") ;
+                    newOpt.value = e ;
+                    newOpt.innerText = e.join(' + ') ;
+                    distribucion.appendChild(newOpt)
+                }
+            )
+        }
+);
     horas.appendChild(horasInput)
+
     let deleteTd = document.createElement("td");
     let deleteButton = document.createElement("button");
     deleteButton.innerText = "x"
@@ -66,10 +70,10 @@ document.getElementById("agregar-fila").addEventListener("click", function () {
         this.parentElement.parentElement.remove();
         updateTotalHours();
     })
+
     deleteTd.appendChild(deleteButton);
     newTr.appendChild(turno);
     newTr.appendChild(cursotd);
-    newTr.appendChild(ciclotd);
     newTr.appendChild(modulotd);
     newTr.appendChild(horas);
     newTr.appendChild(distribuciontd);
@@ -162,6 +166,76 @@ function closeModal() {
     localStorage.setItem('modal',true);
 }
 
+function eliminarHijos(elementoPadre) {
+    while (elementoPadre.firstChild) {
+        elementoPadre.removeChild(elementoPadre.firstChild);
+    }
+}
+
+// function calcularHoras(numero, elemento) {
+
+//     function encontrarSumas(numero) {
+//         const resultados = [];
+//         function encontrarSumasRecursivo(actual, sumaParcial) {
+//             if (sumaParcial === numero && actual.length <= 4) {
+//                 resultados.push(actual.slice()); // Agregar la combinación actual a los resultados
+//                 return;
+//             }
+//             if (sumaParcial >= numero || actual.length >= 4) {
+//                 return;
+//             }
+//             for (let i = 1; i <= 3; i++) {
+//                     if (actual.length === 0 || i <= actual[actual.length - 1]) {
+//                         actual.push(i);
+//                         encontrarSumasRecursivo(actual, sumaParcial + i);
+//                         actual.pop();
+//                     }
+//                 }
+//             }
+    
+//         encontrarSumasRecursivo([], 0);
+//         return resultados;
+//     }
+
+//     const combinaciones = encontrarSumas(numero);
+//     combinaciones.map((e) => {
+//         let newOpt = document.createElement("option")
+//         newOpt.value = e
+//         e.map((e) => {
+//             newOpt.textContent += e + "+" ;
+//         })
+//         elemento.appendChild(newOpt);
+//     })
+// }
+
+function sumasPosibles(numero) {
+    let resultados = [];
+
+    function encontrarSumas(actuales, objetivo) {
+        if (objetivo === 0 && actuales.length > 0) {
+            // Ordenar el array antes de agregarlo a los resultados
+            resultados.push(actuales.slice().sort((a, b) => a - b));
+            return;
+        }
+
+        if (objetivo < 0 || actuales.length === 5) {
+            return;
+        }
+
+        for (let i = 1; i <= 3; i++) {
+            encontrarSumas([...actuales, i], objetivo - i);
+        }
+    }
+
+    encontrarSumas([], numero);
+
+    // Eliminar duplicados
+    resultados = resultados.filter(
+        (valor, indice, array) => array.findIndex(arr => JSON.stringify(arr) === JSON.stringify(valor)) === indice
+    );
+
+    return resultados;
+}
 
 // Acción al aceptar los términos
 function acceptTerms() {
@@ -169,23 +243,35 @@ function acceptTerms() {
     // Agrega aquí cualquier acción adicional que desees realizar después de aceptar los términos.
 }
 
-function validarFormato(inputValue) {
-    // Verificar si el valor coincide con el formato X/X/X
-    const regex = /^\d\/\d\/\d$/; // Asegúrate de que haya barras (/) entre los números
-    if (!regex.test(inputValue)) {
-      console.log('El formato no es válido. Debe ser X/X/X');
-      return;
+// function validarFormato(inputValue) {
+//     // Verificar si el valor coincide con el formato X/X/X
+//     const regex = /^\d\/\d\/\d$/; // Asegúrate de que haya barras (/) entre los números
+//     if (!regex.test(inputValue)) {
+//       console.log('El formato no es válido. Debe ser X/X/X');
+//       return;
+//     }
+  
+//     // Separar los números
+//     const numeros = inputValue.split('/').map(Number);
+  
+//     // Verificar si algún número excede 3
+//     const numeroExcedeLimite = numeros.some(numero => numero > 3);
+  
+//     if (numeroExcedeLimite) {
+//       console.log('Al menos uno de los números excede 3');
+//     } else {
+//       console.log('Todos los números están dentro del límite (<= 3)');
+//     }
+
+function middleware() {
+    const url = "nuestra url" // Cambiar por URL correcta
+    if(sessionStorage.getItem("sessionKey")){
+        console.log("correct session")
+    }else{
+        window.location.replace(url)
     }
-  
-    // Separar los números
-    const numeros = inputValue.split('/').map(Number);
-  
-    // Verificar si algún número excede 3
-    const numeroExcedeLimite = numeros.some(numero => numero > 3);
-  
-    if (numeroExcedeLimite) {
-      console.log('Al menos uno de los números excede 3');
-    } else {
-      console.log('Todos los números están dentro del límite (<= 3)');
-    }
-  }
+
+    // esta funcion solo comprueba si has iniciado sesion asi que todavia falta comprobar que el usuario es quien dice
+
+    
+}
