@@ -206,3 +206,11 @@ document.getElementById('toggleObservaciones').addEventListener('click', functio
 
 // Event listener para el botón #toggleSection
 document.getElementById('toggleSection').addEventListener('click', toggleSection);
+
+
+// Modo Oscuro
+
+function toggleDarkMode() {
+    const html = document.documentElement; // Obtener la etiqueta <html>
+    html.classList.toggle('dark-mode'); // Agregar o quitar la clase 'dark-mode' en <html>
+}
