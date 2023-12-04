@@ -317,3 +317,21 @@ function middleware() {
 
     
 }
+
+function setMiddleware(key) {
+    if(!sessionStorage.getItem("sessionKey")){
+        sessionStorage.setItem("sessionKey", key)
+    }
+
+    // funcion para determinar si la sesion existe
+}
+
+function deleteMiddleware(){
+    const url = "url" ;
+    if(sessionStorage.getItem("sessionKey")){
+        sessionStorage.removeItem("sessionKey")
+        window.location.replace(url);
+    }
+
+    // funcion para elimiar la sesion en caso de que el usuario cierre sesion en vez de salir
+}
