@@ -153,13 +153,14 @@ body {
     /* Puedes ajustar el ancho máximo según tus preferencias */
     margin-top: 20px;
     /* Ajusta el margen superior según tus preferencias */
-    margin-bottom: 10px;
+    margin-bottom: 100px;
     margin-right: 3em;
     margin-left: 3em;
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
 
     /* Nuevas propiedades para dar un aspecto de hoja */
     border: 1px solid #ccc;
@@ -328,13 +329,14 @@ body {
     max-height: 2000px;
     /* Establece una altura máxima que supere la altura máxima posible */
     overflow: hidden;
-    transition: max-height 0.8s ease-in-out 0.8s;
+    transition: max-height 0.2s ease-in-out ;
     /* Agrega una transición suave a la propiedad max-height */
 }
 
 .toggleable-observaciones.hidden,
 .toggleable-section.hidden {
     max-height: 0;
+    transition-delay: 0s; /* Retraso en la transición al cerrarse */
 }
 
 #toggleObservaciones,
@@ -381,6 +383,9 @@ body {
 }
 
 footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     color: black; /* Texto blanco */
