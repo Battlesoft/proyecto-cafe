@@ -8,7 +8,7 @@ document.getElementById("agregar-fila").addEventListener("click", function () {
     newTr.id = crypto.randomUUID();
     let turno = document.createElement("td");
     turno.innerHTML = `
-    <select class="turno form-control">
+    <select class="turno form-select">
         <option value="M">M</option>
         <option value="T">T</option>
     </select>
@@ -17,7 +17,7 @@ document.getElementById("agregar-fila").addEventListener("click", function () {
     let cursotd = document.createElement("td");
     let curso = document.createElement("select")
     // aqui se puede añadir el contenido
-    curso.classList.add("form-control")
+    curso.classList.add("form-select")
     curso.classList.add("curso")
     cursotd.appendChild(curso)
 
@@ -25,19 +25,19 @@ document.getElementById("agregar-fila").addEventListener("click", function () {
     let modulo = document.createElement("select");
     // aqui se puede añadir el contenido
     modulo.classList.add("modulo");
-    modulo.classList.add("form-control")
+    modulo.classList.add("form-select")
     modulotd.appendChild(modulo)
 
     let distribuciontd = document.createElement("td");
     let distribucion = document.createElement("select");
     distribucion.classList.add("distribucion")
-    distribucion.classList.add("form-control")
+    distribucion.classList.add("form-select")
     distribuciontd.appendChild(distribucion)
 
     let aulatd = document.createElement("td");
     let aula = document.createElement("select");
     // aqui se puede añadir el contenido
-    aula.classList.add("form-control")
+    aula.classList.add("form-select")
     aula.classList.add("aula")
     aulatd.appendChild(aula);
 
