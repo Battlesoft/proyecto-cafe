@@ -4,23 +4,25 @@
     padding: 0;
 }
 
- body {
-     background-color: #f3f3f3;
- }
+body {
+    background-color: #f3f3f3;
+}
 
 /*--------------------------------------------------------------------------*/
 
- /*INICIO*/
+/*INICIO*/
 
 /*--------------------------------------------------------------------------*/
- .navbar-brand {
+.home .navbar-brand {
     display: flex;
     align-items: center;
 }
-.navbar-brand img {
+
+.home .navbar-brand img {
     width: 90px;
 }
-.navbar-text {
+
+.home .navbar-text {
     flex: 1;
     display: flex;
     align-items: center;
@@ -29,53 +31,54 @@
     color: #333;
 }
 
- .container {
-     height: 70vh;
-     display: flex;
-     justify-content: center;
-     align-items: center;
- }
+.home .container {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
- .card {
-     width: 100%;
-     max-width: 600px;
-     border: none;
-     border-radius: 10px;
-     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
- }
+.home .card {
+    width: 100%;
+    max-width: 600px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
- .card img {
+.home .card img {
     width: 30%;
- }
- .card-body {
-     text-align: left;
- }
+}
 
- .card-title {
-     font-size: 18px;
-     color: #333;
-     margin-top: 10px;
- }
+.home .card-body {
+    text-align: left;
+}
 
- .form-control {
-     border: 1px solid #ccc;
-     border-radius: 5px;
-     margin: 10px 0;
- }
+.home .card-title {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+}
 
- .btn-primary {
-     background-color: #007bff;
-     border: none;
-     border-radius: 5px;
- }
+.home .form-control {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 0;
+}
 
- .btn-primary:hover {
-     background-color: #0056b3;
- }
+.home .btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+}
 
- .img-fluid {
-     max-width: 100%;
- }
+.home .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.home .img-fluid {
+    max-width: 100%;
+}
 
 
 
@@ -83,7 +86,7 @@
 
 /*--------------------------------------------------------------------------*/
 
- /*INDEX*/
+/*INDEX*/
 
 /*--------------------------------------------------------------------------*/
 
@@ -93,17 +96,64 @@
     font-size: 18px;
 }
 
- .navbar-brand {
+.navbar-brand {
     display: flex;
     align-items: center;
+    height: 49px;
 }
-.navbar-brand img {
+
+.navbar-brand img#imglogo1 {
+    margin-top: 30px;
     width: 90px;
 }
+
+.navbar-brand img#imglogo2 {
+    margin-top: 20px;
+    width: 90px;
+}
+
+.user-section {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    /* Coloca la sección de usuario a la derecha */
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    /* Espacio entre la imagen y el nombre de usuario */
+}
+
+.user-avatar {
+    width: 30px;
+    /* Ajusta el tamaño de la imagen de usuario según sea necesario */
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    /* Espacio entre la imagen y el nombre de usuario */
+}
+
+.user-name {
+    font-weight: bold;
+}
+
+/* Ajusta el diseño del botón y el menú desplegable según tus necesidades */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    min-width: 120px;
+}
+
 .container-index {
     /* Puedes ajustar el ancho máximo según tus preferencias */
-    margin-top: 20px; /* Ajusta el margen superior según tus preferencias */
-    margin-bottom: 10px;
+    margin-top: 20px;
+    /* Ajusta el margen superior según tus preferencias */
+    margin-bottom: 100px;
     margin-right: 3em;
     margin-left: 3em;
     padding: 20px;
@@ -111,64 +161,91 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
+
     /* Nuevas propiedades para dar un aspecto de hoja */
     border: 1px solid #ccc;
     background-size: 20px 20px;
     background-position: 0 0, 10px 10px;
 }
+
 .table {
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 /* Mejora el estilo de los botones */
 .btn-success {
-    background-color: #3498db; /* Color de fondo */
+
+    margin-top: 10px;
+
+    background-color: rgb(50, 183, 13);
+    /* Color de fondo */
     border: none;
-    border-radius: 25px; /* Bordes redondeados */
-    color: #fff; /* Color del texto */
-    padding: 10px 20px; /* Espaciado interno */
-    font-size: 18px; /* Tamaño del texto */
+    border-radius: 3px;
+    /* Bordes redondeados */
+    color: white;
+    /* Color del texto */
+    padding: 10px 20px;
+    /* Espaciado interno */
+    font-size: 18px;
+    /* Tamaño del texto */
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+
+    /* Transiciones suaves */
 }
 
 
 
 .btn-primary {
-    background-color: rgb(0, 134, 4); /* Color de fondo */
+    background-color: rgb(0, 134, 4);
+    /* Color de fondo */
     border: none;
-    border-radius: 3px; /* Bordes redondeados */
-    color: white; /* Color del texto */
-    padding: 10px 20px; /* Espaciado interno */
-    font-size: 18px; /* Tamaño del texto */
+    border-radius: 3px;
+    /* Bordes redondeados */
+    color: white;
+    /* Color del texto */
+
+    /* Espaciado interno */
+    /* Tamaño del texto */
 
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+
+    /* Transiciones suaves */
 }
 
-.btn-primary:hover {
-    background-color: #2980b9; /* Cambia el color al pasar el ratón */
-    transform: scale(1.05); /* Efecto de escala al pasar el ratón */
+#agregar-fila {
+    width: 100px;
+    height: 45px;
 }
 
 
 .section {
-    border-top: 4px solid #c7c7c7; /* Línea superior de la sección */
-    padding-top: 20px; /* Ajusta el espacio superior según tus preferencias */
-    margin-top: 20px; /* Ajusta el margen superior según tus preferencias */
+    border-top: 4px solid #c7c7c7;
+    /* Línea superior de la sección */
+    padding-top: 20px;
+    /* Ajusta el espacio superior según tus preferencias */
+    margin-top: 20px;
+    /* Ajusta el margen superior según tus preferencias */
 }
 
 .section h2 {
     font-weight: bold;
-    font-size: 28px; /* Ajusta el tamaño del título según tus preferencias */
-    text-transform: uppercase; /* Convierte el texto a mayúsculas */
-    color: #2c3e50; /* Cambia el color del título si lo deseas */
+    font-size: 28px;
+    /* Ajusta el tamaño del título según tus preferencias */
+    text-transform: uppercase;
+    /* Convierte el texto a mayúsculas */
+    color: #2c3e50;
+    /* Cambia el color del título si lo deseas */
     margin-bottom: 10px;
-    padding: 10px; /* Espaciado interno para crear un recuadro */
-    border: 2px solid #848e95; /* Borde alrededor del título */
-    border-radius: 4px; /* Bordes redondeados */
-    display: inline-block; /* Añadido para que el borde rodee el texto y no el ancho completo */
+    padding: 10px;
+    /* Espaciado interno para crear un recuadro */
+    border: 2px solid #848e95;
+    /* Borde alrededor del título */
+    border-radius: 4px;
+    /* Bordes redondeados */
+    display: inline-block;
+    /* Añadido para que el borde rodee el texto y no el ancho completo */
 }
 
 /* Estilo del modal */
@@ -244,3 +321,114 @@
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
 }
+
+/*Botones desplegable ocultar secciones primero y tercero  */
+
+.toggleable-observaciones,
+.toggleable-section {
+    max-height: 2000px;
+    /* Establece una altura máxima que supere la altura máxima posible */
+    overflow: hidden;
+    transition: max-height 0.2s ease-in-out ;
+    /* Agrega una transición suave a la propiedad max-height */
+}
+
+.toggleable-observaciones.hidden,
+.toggleable-section.hidden {
+    max-height: 0;
+    transition-delay: 0s; /* Retraso en la transición al cerrarse */
+}
+
+#toggleObservaciones,
+#toggleSection {
+    cursor: pointer;
+    background-color: #828d98;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Estilo de la flecha */
+.arrow {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Rotación de la flecha al ocultar */
+.hidden .arrow {
+    transform: rotate(90deg);
+}
+
+/* Estilo del botón */
+#toggleSection,
+#btnRefresh {
+    cursor: pointer;
+    background-color: #828d98;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Rotación del botón al hacer clic */
+.rotate {
+    transform: rotate(90deg);
+    transition: transform 1s ease-in;
+}
+
+.rotated {
+    transform: rotate(0deg);
+    transition: transform 1s ease-out;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: black; /* Texto blanco */
+    padding: 5px; /* Espaciado interno */
+    border-top: 2px solid #848e95; /* Borde similar al de la tabla */
+}
+
+footer a {
+    color: black; /* Enlaces blancos */
+    text-decoration: none; /* Sin subrayado */
+    border-bottom: 1px dashed #fff; /* Línea punteada en la parte inferior de los enlaces */
+    padding-left: 10px; /* Espaciado a la izquierda para la viñeta circular */
+}
+
+footer a:hover {
+    border-bottom: 1px solid black; /* Línea sólida en la parte inferior al pasar el ratón sobre los enlaces */
+}
+
+/* Estilo para la viñeta circular */
+footer a::before {
+    content: '•'; /* Punto como viñeta */
+    display: inline-block;
+    font-size: 20px;
+    margin-right: 5px; /* Espaciado a la derecha para separar la viñeta del texto */
+}
+
+/* Estilo para el mensaje de licencia */
+footer p {
+    margin: 0; /* Elimina el margen predeterminado */
+}
+
+
+/* .dark-mode {
+    background-color: #1e1e1e; 
+    color: #ffffff; 
+}
+
+.dark-mode .navbar {
+    background-color: #2c2c2c; 
+    color: #ffffff; 
+}
+
+.dark-mode .modal-content {
+    background-color: #2c2c2c; 
+    color: #ffffff; 
+} */

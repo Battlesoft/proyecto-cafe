@@ -299,39 +299,8 @@ function acceptTerms() {
 //     // Verificar si algún número excede 3
 //     const numeroExcedeLimite = numeros.some(numero => numero > 3);
   
-//     if (numeroExcedeLimite) {
-//       console.log('Al menos uno de los números excede 3');
-//     } else {
-//       console.log('Todos los números están dentro del límite (<= 3)');
-//     }
-
-function middleware() {
-    const url = "nuestra url" // Cambiar por URL correcta
-    if(sessionStorage.getItem("sessionKey")){
-        console.log("correct session")
-    }else{
-        window.location.replace(url)
+    if (numeroExcedeLimite) {
+      console.log('Al menos uno de los números excede 3');
+    } else {
+      console.log('Todos los números están dentro del límite (<= 3)');
     }
-
-    // esta funcion solo comprueba si has iniciado sesion asi que todavia falta comprobar que el usuario es quien dice
-
-    
-}
-
-function setMiddleware(key) {
-    if(!sessionStorage.getItem("sessionKey")){
-        sessionStorage.setItem("sessionKey", key)
-    }
-
-    // funcion para determinar si la sesion existe
-}
-
-function deleteMiddleware(){
-    const url = "url" ;
-    if(sessionStorage.getItem("sessionKey")){
-        sessionStorage.removeItem("sessionKey")
-        window.location.replace(url);
-    }
-
-    // funcion para elimiar la sesion en caso de que el usuario cierre sesion en vez de salir
-}
