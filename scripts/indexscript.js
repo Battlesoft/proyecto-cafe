@@ -299,8 +299,32 @@ function acceptTerms() {
 //     // Verificar si algún número excede 3
 //     const numeroExcedeLimite = numeros.some(numero => numero > 3);
   
-    if (numeroExcedeLimite) {
-      console.log('Al menos uno de los números excede 3');
-    } else {
-      console.log('Todos los números están dentro del límite (<= 3)');
-    }
+    // if (numeroExcedeLimite) {
+    //     console.log('Al menos uno de los números excede 3');
+    // } else {
+    //     console.log('Todos los números están dentro del límite (<= 3)');
+    // }
+
+    // Click desplegable tabla
+
+document.getElementById('toggleSection').addEventListener('click', function () {
+    var toggleableSection = document.querySelector('.toggleable-section');
+    toggleableSection.classList.toggle('hidden');
+});
+
+document.getElementById('toggleObservaciones').addEventListener('click', function () {
+    var toggleableObservaciones = document.querySelector('.toggleable-observaciones');
+    toggleableObservaciones.classList.toggle('hidden');
+});
+
+
+// Event listener para el botón #toggleSection
+document.getElementById('toggleSection').addEventListener('click', toggleSection);
+
+
+// Modo Oscuro
+
+function toggleDarkMode() {
+    const html = document.documentElement; // Obtener la etiqueta <html>
+    html.classList.toggle('dark-mode'); // Agregar o quitar la clase 'dark-mode' en <html>
+}
