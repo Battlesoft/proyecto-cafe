@@ -1,4 +1,6 @@
 // Función para agregar una nueva fila a la tabla
+let distSemanal = document.getElementById("distribucion1") 
+
 document.getElementById("agregar-fila").addEventListener("click", function () {
     let table = document.querySelector("table tbody");
     // var newRow = table.insertRow(table.rows.length);
@@ -235,6 +237,46 @@ function sumasPosibles(numero) {
     );
 
     return resultados;
+}
+
+function sumasPosiblesprimero(numero) {
+    let resultados = [];
+
+    function encontrarSumas(actuales, objetivo) {
+        if (objetivo === 0 && actuales.length > 0) {
+            // Ordenar el array antes de agregarlo a los resultados
+            resultados.push(actuales.slice().sort((a, b) => a - b));
+            return;
+        }
+
+        if (objetivo < 0 || actuales.length === 5) {
+            return;
+        }
+
+        for (let i = 1; i <= 3; i++) {
+            encontrarSumas([...actuales, i], objetivo - i);
+        }
+    }
+
+    encontrarSumas([], numero);
+
+    // Eliminar duplicados
+    resultados = resultados.filter(
+        (valor, indice, array) => array.findIndex(arr => JSON.stringify(arr) === JSON.stringify(valor)) === indice
+    );
+
+    distributionfirst(resultados);
+}
+
+function distributionfirst(data) {
+    eliminarHijos(distSemanal)
+    data.forEach((e) => {
+        let newOpt = document.createElement("option") ;
+        newOpt.value = e ;
+        newOpt.innerText = e.join(' + ') ;
+        distSemanal.appendChild(newOpt)
+        }
+    )
 }
 
 // Acción al aceptar los términos

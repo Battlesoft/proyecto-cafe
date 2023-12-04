@@ -93,11 +93,13 @@
                                 <option value="T">T</option>
                             </select>
                         </td>
-                        <td><select name="modulo" id="curso1" class="form-control curso"></select></td>
+                        <td><select name="curso" id="curso1" class="form-control curso"></select></td>
                         <td><select name="modulo" id="modulo1" class="form-control modulo"></select></td>
-                        <td><input type="number" class="form-control horas" oninput="updateTotalHours()"></td>
-                        <td><select name="modulo" id="distribucion" class="form-control distribucion"></select></td>
-                        <td><select name="modulo" id="aula1" class="form-control aula"></select></td>
+                        <td><input type="number" class="form-control horas"
+                                oninput="updateTotalHours();sumasPosiblesprimero(this.value)"></td>
+                        <td><select name="distribucion" id="distribucion1" class="form-control distribucion"></select>
+                        </td>
+                        <td><select name="aula" id="aula1" class="form-control aula"></select></td>
                         <td></td>
                     </tr>
                 </tbody>
