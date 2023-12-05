@@ -8,6 +8,21 @@ body {
     background-color: #f3f3f3;
 }
 
+.navbar-toggler {
+    border: none;
+        font-size: 20px;
+}
+
+.navbar-toggler-icon {
+    background-color: #000; /* Color del icono del botón de la hamburguesa */
+
+}
+
+.navbar-nav .nav-link {
+    margin-right: 15px; /* Ajusta el espacio entre los enlaces */
+    font-size: 19px;
+}
+
 /*--------------------------------------------------------------------------*/
 
 /*INICIO*/
@@ -93,8 +108,11 @@ body {
 
 .form-group label {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 20px;
+
 }
+
+
 
 .form-group input {
     width: 40%;
@@ -178,6 +196,40 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.table input,
+.table select {
+    margin-right: -10px;
+}
+
+/* Estilo específico para el campo de horas */
+.table input.horas {
+    width: 60px; /* Puedes ajustar el ancho según tus preferencias */
+}
+
+/* Estilo específico para los campos de curso y módulo */
+.table select.curso,
+.table select.modulo {
+    width: 20em; /* Puedes ajustar el ancho según tus preferencias */
+}
+
+.table th {
+    font-size: 16px; /* Puedes ajustar el tamaño del texto según tus preferencias */
+}
+
+/* Ajusta el tamaño del texto de los títulos específicos según sus clases */
+.table th,
+.table th,
+.table th {
+    font-size: 17px; /* Puedes ajustar el tamaño del texto según tus preferencias */
+}
+
+/* Solucionar el espacio entre los campos */
+
+/* Añade un poco de espacio entre las filas */
+.table tr {
+    margin-bottom: 50px; /* Puedes ajustar el margen inferior según tus preferencias */
+}
+
 /* Mejora el estilo de los botones */
 .btn-success {
 
@@ -200,10 +252,18 @@ body {
 }
 
 
-.desplegable{
-    background-color: rgb(0, 134, 4);
-    border-radius: 90%;
+.desplegable {
+    background-color: #5f6970;
+    border-radius: 10px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
 }
+
+
 
 .btn-primary {
     background-color: rgb(0, 134, 4);
@@ -223,8 +283,9 @@ body {
 }
 
 #agregar-fila {
-    width: 100px;
-    height: 45px;
+    width: 120px;
+    height: 50px;
+    font-size: 18px;
 }
 
 
@@ -242,7 +303,7 @@ body {
     /* Línea superior de la sección */
     padding-top: 20px;
     /* Ajusta el espacio superior según tus preferencias */
-    margin-top: 20px;
+    margin-top: 16px;
     /* Ajusta el margen superior según tus preferencias */
     clear: right;
 }
@@ -252,7 +313,7 @@ body {
     /* Línea superior de la sección */
     padding-top: 20px;
     /* Ajusta el espacio superior según tus preferencias */
-    margin-top: 38px;
+    margin-top: 32px;
     /* Ajusta el margen superior según tus preferencias */
     clear: right;
 }
@@ -353,19 +414,17 @@ body {
 
 /*Botones desplegable ocultar secciones primero y tercero  */
 
-.toggleable-observaciones,
-.toggleable-section {
-    max-height: 2000px;
-    /* Establece una altura máxima que supere la altura máxima posible */
+.toggleable-section,
+.toggleable-observaciones {
     overflow: hidden;
-    transition: max-height 0.2s ease-in-out ;
-    /* Agrega una transición suave a la propiedad max-height */
+    transition: max-height 0.2s ease-in-out;
+    max-height: 2000px; /* Ajusta según sea necesario */
 }
 
-.toggleable-observaciones.hidden,
-.toggleable-section.hidden {
+.toggleable-section.hidden,
+.toggleable-observaciones.hidden {
     max-height: 0;
-    transition-delay: 0s; /* Retraso en la transición al cerrarse */
+    transition-delay: 0s;
 }
 
 #toggleObservaciones,
@@ -414,39 +473,50 @@ body {
     transition: transform 1s ease-out;
 }
 
+
+.anotaciones h2 {
+    margin-top: 20px;
+    font-size: 26px;
+}
+
+.anotaciones li {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #333;
+}
+
 footer {
-    position: fixed;
-    bottom: 0;
+    position: relative; /* Cambiado de fixed a relative */
     width: 100%;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    color: black; /* Texto blanco */
-    padding: 5px; /* Espaciado interno */
-    border-top: 2px solid #848e95; /* Borde similar al de la tabla */
+    color: black;
+    padding: 5px;
+    border-top: 2px solid #848e95;
+    margin-top: 20px; /* Ajusta según sea necesario */
 }
 
+/* Opcional: Ajusta el estilo del enlace y la viñeta según tus preferencias */
 footer a {
-    color: black; /* Enlaces blancos */
-    text-decoration: none; /* Sin subrayado */
-    border-bottom: 1px dashed #fff; /* Línea punteada en la parte inferior de los enlaces */
-    padding-left: 10px; /* Espaciado a la izquierda para la viñeta circular */
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px dashed #fff;
+    padding-left: 10px;
 }
 
 footer a:hover {
-    border-bottom: 1px solid black; /* Línea sólida en la parte inferior al pasar el ratón sobre los enlaces */
+    border-bottom: 1px solid black;
 }
 
-/* Estilo para la viñeta circular */
 footer a::before {
-    content: '•'; /* Punto como viñeta */
+    content: '•';
     display: inline-block;
     font-size: 20px;
-    margin-right: 5px; /* Espaciado a la derecha para separar la viñeta del texto */
+    margin-right: 5px;
 }
 
-/* Estilo para el mensaje de licencia */
 footer p {
-    margin: 0; /* Elimina el margen predeterminado */
+    margin: 0;
 }
 
 
