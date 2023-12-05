@@ -96,6 +96,10 @@ body {
     font-size: 18px;
 }
 
+.form-group input {
+    width: 40%;
+}
+
 .navbar-brand {
     display: flex;
     align-items: center;
@@ -196,6 +200,10 @@ body {
 }
 
 
+.desplegable{
+    background-color: rgb(0, 134, 4);
+    border-radius: 90%;
+}
 
 .btn-primary {
     background-color: rgb(0, 134, 4);
@@ -227,6 +235,26 @@ body {
     /* Ajusta el espacio superior según tus preferencias */
     margin-top: 20px;
     /* Ajusta el margen superior según tus preferencias */
+}
+
+.section1{
+    border-top: 4px solid #c7c7c7;
+    /* Línea superior de la sección */
+    padding-top: 20px;
+    /* Ajusta el espacio superior según tus preferencias */
+    margin-top: 20px;
+    /* Ajusta el margen superior según tus preferencias */
+    clear: right;
+}
+
+.section3{
+    border-top: 4px solid #c7c7c7;
+    /* Línea superior de la sección */
+    padding-top: 20px;
+    /* Ajusta el espacio superior según tus preferencias */
+    margin-top: 38px;
+    /* Ajusta el margen superior según tus preferencias */
+    clear: right;
 }
 
 .section h2 {
@@ -309,6 +337,7 @@ body {
     line-height: 1.5;
 }
 
+
 /* Estilo del botón de aceptar */
 .accept-btn {
     width: 23%;
@@ -342,12 +371,15 @@ body {
 #toggleObservaciones,
 #toggleSection {
     cursor: pointer;
-    background-color: #828d98;
+
     color: #fff;
     border: none;
     padding: 10px;
     margin-bottom: 10px;
+    float: left; /* Hace que el botón flote a la izquierda */
+    margin-right: 10px; /* Agrega un margen a la derecha del botón para separarlo de la línea */
 }
+
 
 /* Estilo de la flecha */
 .arrow {
@@ -364,7 +396,7 @@ body {
 #toggleSection,
 #btnRefresh {
     cursor: pointer;
-    background-color: #828d98;
+
     color: #fff;
     border: none;
     padding: 10px;

@@ -65,7 +65,7 @@ document.getElementById("agregar-fila").addEventListener("click", function () {
 
     let deleteTd = document.createElement("td");
     let deleteButton = document.createElement("button");
-    deleteButton.innerText = "x"
+    deleteButton.innerText = "X"
     deleteButton.classList.add("btn")
     deleteButton.classList.add("btn-danger")
     deleteButton.addEventListener("click", function () {
