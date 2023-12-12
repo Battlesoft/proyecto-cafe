@@ -169,14 +169,15 @@
                                     <option value="T">T</option>
                                 </select>
                             </td>
-                        <td><select name="curso" id="curso1" class="form-select curso"></select></td>
-                        <td><select name="modulo" id="modulo1" class="form-select modulo"></select></td>
-                        <td><input type="number" class="form-control horas"
-                                oninput="updateTotalHours();sumasPosiblesprimero(this.value)"></td>
-                        <td><select name="distribucion" id="distribucion1" class="form-select distribucion"></select>
-                        </td>
-                        <td><select name="aula" id="aula1" class="form-select aula"></select></td>
-                        <td></td>
+                            <td><select name="curso" id="curso1" class="form-select curso"></select></td>
+                            <td><select name="modulo" id="modulo1" class="form-select modulo"></select></td>
+                            <td><input type="number" class="form-control horas"
+                                    oninput="updateTotalHours();sumasPosiblesprimero(this.value)"></td>
+                            <td><select name="distribucion" id="distribucion1"
+                                    class="form-select distribucion"></select>
+                            </td>
+                            <td><select name="aula" id="aula1" class="form-select aula"></select></td>
+                            <td></td>
                         </tr>
                     </tbody>
                     <tfoot>
@@ -276,10 +277,83 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 
     <script src="../scripts/indexscript.js"></script>
+    <script>
+        let distSemanal = document.getElementById("distribucion1")
+
+        function updateTotalHours() {
+            var totalHoursCell = document.getElementById("total-horas");
+            var rows = document.querySelectorAll("table tbody tr");
+            var total = 0;
+            for (var i = 0; i < rows.length; i++) {
+                var hoursInput = rows[i].querySelector(".horas");
+                if (hoursInput && hoursInput.value) {
+                    total += parseFloat(hoursInput.value);
+                }
+            }
+            totalHoursCell.textContent = total;
+
+            // Verificar si el total supera las 18 horas y aplicar el estilo rojo
+            if (total > 18) {
+                totalHoursCell.classList.remove("border", "bg-danger", "text-white");
+                totalHoursCell.classList.add("border", "bg-danger", "text-white");
+            } else {
+                // Si no supera las 18 horas, asegúrate de quitar la clase de borde rojo
+                totalHoursCell.classList.remove("border", "bg-danger", "text-white");
+                totalHoursCell.classList.add("border", "bg-success", "text-white");
+            }
+        }
+
+
+        function sumasPosiblesprimero(numero) {
+            let resultados = [];
+
+            function encontrarSumas(actuales, objetivo) {
+                if (objetivo === 0 && actuales.length > 0) {
+                    // Ordenar el array antes de agregarlo a los resultados
+                    resultados.push(actuales.slice().sort((a, b) => a - b));
+                    return;
+                }
+
+                if (objetivo < 0 || actuales.length === 5) {
+                    return;
+                }
+
+                for (let i = 1; i <= 3; i++) {
+                    encontrarSumas([...actuales, i], objetivo - i);
+                }
+            }
+
+            encontrarSumas([], numero);
+
+            // Eliminar duplicados
+            resultados = resultados.filter(
+                (valor, indice, array) => array.findIndex(arr => JSON.stringify(arr) === JSON.stringify(valor)) === indice
+            );
+
+            distributionfirst(resultados);
+        }
+
+        function distributionfirst(data) {
+            eliminarHijos(distSemanal)
+            data.forEach((e) => {
+                let newOpt = document.createElement("option");
+                newOpt.value = e;
+                newOpt.innerText = e.join(' + ');
+                distSemanal.appendChild(newOpt)
+            }
+            )
+        }
+
+        function eliminarHijos(elementoPadre) {
+            while (elementoPadre.firstChild) {
+                elementoPadre.removeChild(elementoPadre.firstChild);
+            }
+        }
+    </script>
 </body>
 
 </html>
