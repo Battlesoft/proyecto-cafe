@@ -135,12 +135,14 @@ body {
     height: 30px;
     border-radius: 50%;
     margin-right: 10px;
-    margin-top: auto; /* Ajusta según sea necesario */
+    margin-top: auto;
+    /* Ajusta según sea necesario */
 }
 
 .user-name {
     font-weight: bold;
-    margin-top: auto; /* Ajusta según sea necesario */
+    margin-top: auto;
+    /* Ajusta según sea necesario */
 }
 
 /* Ajusta el diseño del botón y el menú desplegable según tus necesidades */
@@ -188,13 +190,14 @@ body {
 .table select.modulo,
 .table select.distribucion {
     max-width: 200px;
-    overflow: hidden; 
-    text-overflow: ellipsis; 
-    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
+
 .table select.curso,
 .table select.modulo {
-    width: 20em; 
+    width: 20em;
 }
 
 .table th {
@@ -268,47 +271,7 @@ body {
     display: inline-block;
 }
 
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
-}
 
-.modal-content {
-    background-color: #fff;
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #333;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.terms {
-    text-align: left;
-    margin-bottom: 20px;
-}
 
 .terms h2 {
     color: red;
@@ -426,3 +389,47 @@ footer a {
     color: #ffffff; 
 } 
 */
+
+/*DEPARTAMENTO*/
+
+.departamento .container {
+    margin-top: 50px;
+}
+
+.departamento .user-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.departamento .department-info {
+    margin-top: 30px;
+}
+
+.departamento .table th,
+.table td {
+    text-align: center;
+}
+
+/* Estilos mejorados para el área de botones */
+.departamento .botones-area {
+    background-color: #f8f9fa;
+    /* Color de fondo */
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.departamento .btn-primary {
+    background-color: #007bff;
+    /* Color de fondo del botón */
+    border-color: #007bff;
+    /* Color del borde del botón */
+}
+
+.departamento .btn-primary:hover {
+    background-color: #0056b3;
+    /* Color de fondo al pasar el ratón sobre el botón */
+    border-color: #0056b3;
+    /* Color del borde al pasar el ratón sobre el botón */
+}
+
