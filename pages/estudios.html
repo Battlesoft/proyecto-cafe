@@ -70,11 +70,11 @@
     
 
 
-    <div class="container departamento">
+    <div class="container-fluid estudios">
         <div class="row">
             <!-- Botones a la izquierda con estilo de CRUD -->
-            <div class="col-md-4 mb-4">
-                <section class="crud-section p-3" style="background-color: #f8d7da; border-radius: 8px;">
+            <div class="col-md-3 mb-4">
+                <section class="mt-3 p-3" style="background-color: #f8d7da; border-radius: 8px;">
                     <h3 class="mb-3">Administrar</h3>
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a class="nav-link active" id="mostrarUsuarios" data-bs-toggle="pill" href="#usuariosContent" role="tab" aria-controls="usuariosContent" aria-selected="true">
@@ -92,15 +92,18 @@
 
 
             <!-- Contenido a la derecha -->
-            <div class="col-md-8 mb-4 d-flex justify-content-center align-items-center">
+            <div class="col-md-8 mb-4 d-flex  align-items-center">
                 <!-- CRUD de Usuarios -->
                 <div id="usuariosContent">
                     <h2>Administrar Usuarios</h2>
+
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
                         Agregar Usuario
                     </button>
-                    <div class="mt-4">
+                    
+                    <div class="table-responsive">
                         <h3>Lista de Usuarios</h3>
+                        
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -115,8 +118,8 @@
                                 <tr>
                                     <td id="enseña_user">Usuario1</td>
                                     <td id="enseña_email">usuario1@example.com</td>
-                                    <td id="enseña_especialidad">Especialidad1</td>
-                                    <td id="enseña_modulo">Módulo1</td>
+                                    <td id="enseña_especialidad">INFORMATICA Y COMUNICACIONES</td>
+                                    <td id="enseña_modulo">DESSARROLLO DE APLICACIONES WEB</td>
                                     <td>
                                         <button id="edita_user" class="btn btn-warning">Editar</button>
                                         <button id="elimina_user" class="btn btn-danger">Eliminar</button>
@@ -128,44 +131,49 @@
                 </div>
 
                 <!-- Información de Departamentos -->
-                <div id="departamentosContent" style="display: none;">
-                    <h2>Información de Departamentos</h2>
-                    <div class="mt-4">
-                        <!-- Departamento 1 -->
-                        <h3 id="nombre_departamento">Departamento 1</h3>
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Nombre de Docente</th>
-                                    <th>Correo Electrónico</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Usuarios del Departamento 1 -->
-                                <tr>
-                                    <td id="enseña_user_docente_departamento">Usuario1</td>
-                                    <td id="enseña_email_docente_departamento" >usuario1@example.com</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <!-- Departamento 2 -->
-                        <h3 class="mt-4" id="nombre_departamento">Departamento 2</h3>
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Nombre del Docente</th>
-                                    <th>Correo Electrónico</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Usuarios del Departamento 2 -->
-                                <tr>
-                                    <td id="enseña_user_docente_departamento">Usuario2</td>
-                                    <td id="enseña_email_docente_departamento">usuario2@example.com</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                <div id="departamentosContent" style="display: none;" class="container departamento">
+                    <div class="row">
+                        <!-- Contenido de Departamentos -->
+                        <div class="col-md-12 mb-4">
+                            <h2 class="text-center">Información de Departamentos</h2>
+                            <div class="mt-4">
+                                <!-- Departamento 1 -->
+                                <h3 class="mt-4 text-center" id="nombre_departamento">Departamento 1</h3>
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre de Docente</th>
+                                            <th>Correo Electrónico</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Usuarios del Departamento 1 -->
+                                        <tr>
+                                            <td id="enseña_user_docente_departamento">Usuario1</td>
+                                            <td id="enseña_email_docente_departamento">usuario1@example.com</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                
+                                <!-- Departamento 2 -->
+                                <h3 class="mt-4 text-center" id="nombre_departamento">Departamento 2</h3>
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre del Docente</th>
+                                            <th>Correo Electrónico</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Usuarios del Departamento 2 -->
+                                        <tr>
+                                            <td id="enseña_user_docente_departamento">Usuario2</td>
+                                            <td id="enseña_email_docente_departamento">usuario2@example.com</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -4,7 +4,12 @@
     padding: 0;
 }
 
-/* FOOTER */
+/*--------------------------------------------------------------------------*/
+
+/*FOOTER GLOBAL*/
+
+/*--------------------------------------------------------------------------*/
+
 body {
     background-color: #f3f3f3;
 }
@@ -18,7 +23,12 @@ footer a {
     color: black;
 }
 
-/* NAV */
+/*--------------------------------------------------------------------------*/
+
+/*NAV GLOBAL*/
+
+/*--------------------------------------------------------------------------*/
+
 .form-group label {
     font-weight: bold;
     font-size: 20px;
@@ -35,8 +45,8 @@ footer a {
 }
 
 .navbar-brand img#imglogo1 {
-    margin-top: 30px;
-    width: 90px;
+    margin-top: 32px;
+    width: 120px;
     height: auto;
 }
 
@@ -62,7 +72,7 @@ footer a {
 
 /*--------------------------------------------------------------------------*/
 
-/*INICIO*/
+/*INDEX*/
 
 /*--------------------------------------------------------------------------*/
 
@@ -117,7 +127,7 @@ footer a {
 
 /*--------------------------------------------------------------------------*/
 
-/*INDEX*/
+/*FORMULARIO*/
 
 /*--------------------------------------------------------------------------*/
 
@@ -158,35 +168,6 @@ footer a {
 
 .formulario .table input.horas {
     width: 60px;
-}
-
-.formulario .table th.turno,
-.formulario .table select.curso,
-.formulario .table select.modulo,
-.formulario .table select.distribucion {
-    max-width: 200px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.formulario .table select.curso,
-.formulario .table select.modulo {
-    width: 20em;
-}
-
-.formulario .table th {
-    font-size: 16px;
-}
-
-.formulario .table th,
-.formulario .table th,
-.formulario .table th {
-    font-size: 17px;
-}
-
-.formulario .table tr {
-    margin-bottom: 10px;
 }
 
 
@@ -341,7 +322,7 @@ footer a {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    max-width: 600px; /* Ajusta el ancho máximo según tus necesidades */
+    max-width: 600px;
     width: 90%;
     text-align: center;
 }
@@ -400,56 +381,40 @@ footer a {
 } 
 */
 
-/*DEPARTAMENTO*/
+/*--------------------------------------------------------------------------*/
 
-.departamento .container {
-    margin-top: 50px;
-}
+/*ESTUDIOS*/
 
-.departamento .user-form {
-    max-width: 600px;
-    margin: 0 auto;
-}
+/*--------------------------------------------------------------------------*/
 
-.departamento .department-info {
-    margin-top: 30px;
-}
 
-.departamento .table th,
-.table td {
-    text-align: center;
-}
-
-/* Estilos mejorados para el área de botones */
-.departamento .botones-area {
+.estudios .botones-area {
     background-color: #f8f9fa;
-    /* Color de fondo */
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 15px;
 }
 
-.departamento .btn-primary {
+.estudios .btn-primary {
     background-color: #007bff;
-    /* Color de fondo del botón */
+
     border-color: #007bff;
-    /* Color del borde del botón */
+
 }
 
-.departamento .btn-primary:hover {
+.estudios .btn-primary:hover {
     background-color: #0056b3;
-    /* Color de fondo al pasar el ratón sobre el botón */
+
     border-color: #0056b3;
-    /* Color del borde al pasar el ratón sobre el botón */
 }
 
-.departamento .vertical-buttons {
+.estudios .vertical-buttons {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.departamento .vertical-buttons a {
+.estudios .vertical-buttons a {
     text-align: center;
     padding: 10px;
     margin-bottom: 10px;
@@ -460,10 +425,10 @@ footer a {
     transition: background-color 0.3s;
 }
 
-.departamento  .vertical-buttons a.active {
+.estudios  .vertical-buttons a.active {
     background-color: #0056b3;
 }
 
-.departamento .vertical-buttons a:hover {
+.estudios .vertical-buttons a:hover {
     background-color: #0056b3;
 }
