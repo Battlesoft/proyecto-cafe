@@ -4,8 +4,59 @@
     padding: 0;
 }
 
+/* FOOTER */
 body {
     background-color: #f3f3f3;
+}
+
+footer {
+    position: relative;
+    font-size: 16px;
+}
+
+footer a {
+    color: black;
+}
+
+/* NAV */
+.form-group label {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.form-group input {
+    width: 40%;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    height: 49px;
+}
+
+.navbar-brand img#imglogo1 {
+    margin-top: 30px;
+    width: 90px;
+    height: auto;
+}
+
+.user-section {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+
+.user-name {
+    font-weight: bold;
+    margin-top: auto;
+    /* Ajusta según sea necesario */
 }
 
 
@@ -14,23 +65,6 @@ body {
 /*INICIO*/
 
 /*--------------------------------------------------------------------------*/
-.home .navbar-brand {
-    display: flex;
-    align-items: center;
-}
-
-.home .navbar-brand img {
-    width: 90px;
-}
-
-.home .navbar-text {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    color: #333;
-}
 
 .home .container {
     height: 70vh;
@@ -81,10 +115,6 @@ body {
     max-width: 100%;
 }
 
-
-
-
-
 /*--------------------------------------------------------------------------*/
 
 /*INDEX*/
@@ -92,71 +122,16 @@ body {
 /*--------------------------------------------------------------------------*/
 
 
-/* NAV */
-.form-group label {
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.form-group input {
-    width: 40%;
-}
-
-.navbar-brand {
-    display: flex;
-    align-items: center;
-    height: 49px;
-}
-
-.navbar-brand img#imglogo1 {
-    margin-top: 30px;
-    width: 90px;
-}
-
-.navbar-brand img#imglogo2 {
-    margin-top: 20px;
-    width: 90px;
-}
-
-.user-section {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    margin-right: 20px;
-}
-
-.user-info {
-    display: flex;
-    align-items: center;
-}
-
-.user-avatar {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-right: 10px;
-    margin-top: auto;
-    /* Ajusta según sea necesario */
-}
-
-.user-name {
-    font-weight: bold;
-    margin-top: auto;
-    /* Ajusta según sea necesario */
-}
-
-/* Ajusta el diseño del botón y el menú desplegable según tus necesidades */
-.dropdown {
+.formulario .dropdown {
     position: relative;
     display: inline-block;
 }
 
-.dropdown-menu {
+.formulario .dropdown-menu {
     min-width: 120px;
 }
 
-/* Otros estilos */
-.container-index {
+.formulario .container-index {
     margin-top: 20px;
     margin-bottom: 100px;
     margin-right: 3em;
@@ -170,51 +145,51 @@ body {
     background-position: 0 0, 10px 10px;
 }
 
-.table {
+.formulario .table {
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.table input,
-.table select {
+.formulario .table input,
+.formulario .table select {
     margin-right: 0px;
 }
 
-.table input.horas {
+.formulario .table input.horas {
     width: 60px;
 }
 
-.table th.turno,
-.table select.curso,
-.table select.modulo,
-.table select.distribucion {
+.formulario .table th.turno,
+.formulario .table select.curso,
+.formulario .table select.modulo,
+.formulario .table select.distribucion {
     max-width: 200px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-.table select.curso,
-.table select.modulo {
+.formulario .table select.curso,
+.formulario .table select.modulo {
     width: 20em;
 }
 
-.table th {
+.formulario .table th {
     font-size: 16px;
 }
 
-.table th,
-.table th,
-.table th {
+.formulario .table th,
+.formulario .table th,
+.formulario .table th {
     font-size: 17px;
 }
 
-.table tr {
+.formulario .table tr {
     margin-bottom: 10px;
 }
 
-.btn-success {
+.formulario .btn-success {
     margin-top: 10px;
     background-color: rgb(50, 183, 13);
     border: none;
@@ -225,7 +200,7 @@ body {
     cursor: pointer;
 }
 
-.desplegable {
+.formulario .desplegable {
     background-color: #5f6970;
     border-radius: 10px;
     width: 35px;
@@ -236,7 +211,7 @@ body {
     border: 2px solid black;
 }
 
-.btn-primary {
+.formulario .btn-primary {
     background-color: rgb(0, 134, 4);
     border: none;
     border-radius: 3px;
@@ -244,22 +219,22 @@ body {
     cursor: pointer;
 }
 
-#agregar-fila {
+.formulario #agregar-fila {
     width: auto;
     height: 40px;
     font-size: 17px;
 }
 
-.section,
-.section1,
-.section3 {
+.formulario .section,
+.formulario .section1,
+.formulario .section3 {
     border-top: 4px solid #c7c7c7;
     padding-top: 20px;
     margin-top: 20px;
     clear: right;
 }
 
-.section h2 {
+.formulario .section h2 {
     font-weight: bold;
     font-size: 28px;
     text-transform: uppercase;
@@ -271,26 +246,24 @@ body {
     display: inline-block;
 }
 
-
-
-.terms h2 {
+.formulario .terms h2 {
     color: red;
     font-size: 28px;
     margin-bottom: 10px;
 }
 
-.terms ul {
+.formulario .terms ul {
     list-style-type: none;
     padding: 0;
 }
 
-.terms li {
+.formulario .terms li {
     margin-bottom: 10px;
     font-size: 18px;
     line-height: 1.5;
 }
 
-.accept-btn {
+.formulario .accept-btn {
     width: 23%;
     background-color: rgb(133, 215, 133);
     color: black;
@@ -302,21 +275,21 @@ body {
     transition: background-color 0.3s, transform 0.2s;
 }
 
-.toggleable-section,
-.toggleable-observaciones {
+.formulario .toggleable-section,
+.formulario .toggleable-observaciones {
     overflow: hidden;
     transition: max-height 0.2s ease-in-out;
     max-height: 2000px;
 }
 
-.toggleable-section.hidden,
-.toggleable-observaciones.hidden {
+.formulario .toggleable-section.hidden,
+.formulario .toggleable-observaciones.hidden {
     max-height: 0;
     transition-delay: 0s;
 }
 
-#toggleObservaciones,
-#toggleSection {
+.formulario #toggleObservaciones,
+.formulario #toggleSection {
     cursor: pointer;
     color: #fff;
     border: none;
@@ -326,17 +299,17 @@ body {
     margin-right: 10px;
 }
 
-.arrow {
+.formulario .arrow {
     display: inline-block;
     transition: transform 0.3s ease-in-out;
 }
 
-.hidden .arrow {
+.formulario .hidden .arrow {
     transform: rotate(90deg);
 }
 
-#toggleSection,
-#btnRefresh {
+.formulario #toggleSection,
+.formulario #btnRefresh {
     cursor: pointer;
     color: #fff;
     border: none;
@@ -344,34 +317,25 @@ body {
     margin-bottom: 10px;
 }
 
-.rotate {
+.formulario .rotate {
     transform: rotate(90deg);
     transition: transform 1s ease-in;
 }
 
-.rotated {
+.formulario .rotated {
     transform: rotate(0deg);
     transition: transform 1s ease-out;
 }
 
-.anotaciones h2 {
+.formulario .anotaciones h2 {
     margin-top: 20px;
     font-size: 26px;
 }
 
-.anotaciones li {
+.formulario .anotaciones li {
     font-size: 20px;
     line-height: 1.5;
     color: #333;
-}
-
-footer {
-    position: relative;
-    font-size: 16px;
-}
-
-footer a {
-    color: black;
 }
 
 /* .dark-mode {
@@ -433,3 +397,27 @@ footer a {
     /* Color del borde al pasar el ratón sobre el botón */
 }
 
+.departamento .vertical-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.departamento .vertical-buttons a {
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.departamento  .vertical-buttons a.active {
+    background-color: #0056b3;
+}
+
+.departamento .vertical-buttons a:hover {
+    background-color: #0056b3;
+}

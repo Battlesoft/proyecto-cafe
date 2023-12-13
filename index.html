@@ -13,11 +13,57 @@
 
 <body class="home">
 
-    <header class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img src="./images/logo.png" alt="Majada Marcial Logo" id="imglogo1" class="img-fluid mb-4">
-        </a>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="../images/logo.png" alt="Majada Marcial Logo" id="imglogo1" class="img-fluid mb-3">
+                </a>
+    
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+    
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menú</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+    
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav"> <!-- Lista a la izquierda -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Inicio</a>
+                            </li>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="#">Estudios</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Departamento</a>
+                            </li> -->
+                        </ul>
+    
+                        <ul class="navbar-nav ms-auto"> <!-- Lista a la derecha -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link user-name nav-link dropdown-toggle" id="user_name" href="#"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Nombre de Usuario
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </header>
+    
 
     <div class="container">
         <div class="card">
@@ -25,18 +71,19 @@
                 <img src="./images/logo.png" alt="Majada Marcial Logo" class="img-fluid mb-3">
                 <h2 class="card-title">Iniciar Sesión</h2>
                 <form>
-                    <div class="form-group">
+                    <div class="mb-3">
                         <input type="text" class="form-control" placeholder="Usuario o Email">
                     </div>
-                    <div class="form-group">
+                    <div class="mb-3">
                         <input type="password" class="form-control" placeholder="Contraseña">
                     </div>
-                    <a href="./pages/formulario.html" type="submit" class="btn btn-primary btn-block">Ingresar</a>
-                    <a href="#">¿Se te olvidó el usuario o la contraseña?</a>
+                    <a href="./pages/main.html" type="submit" class="btn btn-primary btn-block">Ingresar</a>
+                    <a href="#" class="d-block mt-3">¿Se te olvidó el usuario o la contraseña?</a>
                 </form>
             </div>
         </div>
     </div>
+    
 
     <!-- -------------------------------------------------------------------------------------------------------------------------- -->
 

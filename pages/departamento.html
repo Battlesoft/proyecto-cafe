@@ -14,41 +14,41 @@
 <body>
 
 
-    <header class="navbar navbar-expand-lg navbar-light bg-light">
-
+    <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
                     <img src="../images/logo.png" alt="Majada Marcial Logo" id="imglogo1" class="img-fluid mb-3">
                 </a>
-
+    
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
+    
                 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
                     aria-labelledby="offcanvasNavbarLabel">
-
+    
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menú</h5>
                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                             aria-label="Close"></button>
                     </div>
-
+    
                     <div class="offcanvas-body">
-                        <ul class="navbar-nav">
+                        <ul class="navbar-nav"> <!-- Lista a la izquierda -->
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Inicio</a>
-
-                                <!-- <li class="nav-item">
+                            </li>
+                            <!-- <li class="nav-item">
                                 <a class="nav-link" href="#">Estudios</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Departamento</a>
                             </li> -->
-
-
+                        </ul>
+    
+                        <ul class="navbar-nav ms-auto"> <!-- Lista a la derecha -->
                             <li class="nav-item dropdown">
                                 <a class="nav-link user-name nav-link dropdown-toggle" id="user_name" href="#"
                                     role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -61,27 +61,33 @@
                         </ul>
                     </div>
                 </div>
-
             </div>
         </nav>
     </header>
-
     
+
+
     <div class="container departamento">
         <div class="row">
-            <!-- Botones a la izquierda -->
-            <div class="col-md-2 mb-4">
-                <button id="mostrarUsuarios" class="btn btn-primary">Lista de Usuarios</button>
-                <button id="mostrarDepartamentos" class="btn btn-primary">Info de Departamentos</button>
+            <!-- Botones centrados en la parte superior -->
+            <div class="col-md-12 mb-4 text-center">
+                <div class="nav flex-column nav-pills mx-auto" id="v-pills-tab" role="tablist"
+                    aria-orientation="vertical">
+                    <a class="nav-link active" id="mostrarUsuarios" data-bs-toggle="pill" href="#usuariosContent"
+                        role="tab" aria-controls="usuariosContent" aria-selected="true">Lista de Usuarios</a>
+                    <a class="nav-link" id="mostrarDepartamentos" data-bs-toggle="pill" href="#departamentosContent"
+                        role="tab" aria-controls="departamentosContent" aria-selected="false">Info de Departamentos</a>
+                </div>
             </div>
+
+
 
             <!-- Contenido a la derecha -->
             <div class="col-md-10 mb-4">
                 <!-- CRUD de Usuarios -->
                 <div id="usuariosContent">
                     <h2>Administrar Usuarios</h2>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#addUserModal">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
                         Agregar Usuario
                     </button>
                     <div class="mt-4">
@@ -89,7 +95,6 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
                                     <th>Nombre de Usuario</th>
                                     <th>Correo Electrónico</th>
                                     <th>Especialidad</th>
@@ -99,14 +104,13 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Usuario1</td>
-                                    <td>usuario1@example.com</td>
-                                    <td>Especialidad1</td>
-                                    <td>Módulo1</td>
+                                    <td id="enseña_user">Usuario1</td>
+                                    <td id="enseña_email">usuario1@example.com</td>
+                                    <td id="enseña_especialidad">Especialidad1</td>
+                                    <td id="enseña_modulo">Módulo1</td>
                                     <td>
-                                        <button class="btn btn-warning">Editar</button>
-                                        <button class="btn btn-danger">Eliminar</button>
+                                        <button id="edita_user" class="btn btn-warning">Editar</button>
+                                        <button id="elimina_user" class="btn btn-danger">Eliminar</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -119,7 +123,7 @@
                     <h2>Información de Departamentos</h2>
                     <div class="mt-4">
                         <!-- Departamento 1 -->
-                        <h3>Departamento 1</h3>
+                        <h3 d="nombre_departamento">Departamento 1</h3>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -130,14 +134,14 @@
                             <tbody>
                                 <!-- Usuarios del Departamento 1 -->
                                 <tr>
-                                    <td>Usuario1</td>
-                                    <td>usuario1@example.com</td>
+                                    <td id="enseña_user_docente_departamento">Usuario1</td>
+                                    <td id="enseña_email_docente_departamento" >usuario1@example.com</td>
                                 </tr>
                             </tbody>
                         </table>
 
                         <!-- Departamento 2 -->
-                        <h3 class="mt-4">Departamento 2</h3>
+                        <h3 class="mt-4" id="nombre_departamento">Departamento 2</h3>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -148,8 +152,8 @@
                             <tbody>
                                 <!-- Usuarios del Departamento 2 -->
                                 <tr>
-                                    <td>Usuario2</td>
-                                    <td>usuario2@example.com</td>
+                                    <td id="enseña_user_docente_departamento">Usuario2</td>
+                                    <td id="enseña_email_docente_departamento">usuario2@example.com</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -179,11 +183,11 @@
                         </div>
                         <div class="mb-3">
                             <label for="specialty" class="form-label">Especialidad:</label>
-                            <select class="form-control" id="specialty" required>
+                            <select class="form-control" id="specialty" required></select>
                         </div>
                         <div class="mb-3">
-                            <label for="Departamento" class="form-label">Departamento:</label>
-                            <select  class="form-control" id="module" required>
+                            <label for="departamento" class="form-label">Departamento:</label>
+                            <select class="form-control" id="departamento" required></select>
                         </div>
                         <button type="button" class="btn btn-primary">Agregar Usuario</button>
                     </form>
@@ -191,6 +195,7 @@
             </div>
         </div>
     </div>
+
 
     <footer>
         <div class="container">
