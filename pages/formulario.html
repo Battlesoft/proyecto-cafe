@@ -16,7 +16,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="./main.html">
                     <img src="../images/logo.png" alt="Majada Marcial Logo" id="imglogo1" class="img-fluid mb-3">
                 </a>
     
@@ -37,7 +37,7 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav"> <!-- Lista a la izquierda -->
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Inicio</a>
+                                <a class="nav-link" href="./main.html">Inicio</a>
                             </li>
                             <!-- <li class="nav-item">
                                 <a class="nav-link" href="#">Estudios</a>
@@ -70,7 +70,6 @@
 
     <div id="myModal" class="modal">
         <div class="modal-content">
-
             <div class="terms">
                 <h2>Anotaciones Obligatorias</h2>
                 <ul>
@@ -84,6 +83,7 @@
             <button class="accept-btn" onclick="acceptTerms()">Aceptar</button>
         </div>
     </div>
+
 
 
     <div class="container-index">
@@ -195,7 +195,10 @@
             </div>
         </div>
 
-        <button class="btn-success">Enviar Ficha</button>
+        <div class="mt-4">
+            <button class="btn btn-success">Enviar Ficha</button>
+            <a href="./main.html"><button class="btn btn-secondary">Volver</button></a>
+        </div>
     </div>
 
     <footer>
@@ -331,6 +334,8 @@
                 elementoPadre.removeChild(elementoPadre.firstChild);
             }
         }
+
+        
     </script>
 </body>
 

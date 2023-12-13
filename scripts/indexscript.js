@@ -149,24 +149,46 @@ function updateTotalHours() {
 window.addEventListener("load", updateTotalHours);
 
 
-// Mostrar el modal al cargar la página
-window.onload = function () {
-    if(localStorage.getItem('modal')){
-
-    }else {
-        var modal = document.getElementById('myModal');
-        modal.style.display = 'block';
+// Función para abrir el modal si no se ha visto antes
+window.onload = function() {
+    if (!haVistoModal()) {
+        mostrarModal();
     }
+};
+
+// Función para abrir el modal si no se ha visto antes
+window.onload = function() {
+    if (!haVistoModal()) {
+        mostrarModal();
+    }
+};
+
+// Función para mostrar el modal
+function mostrarModal() {
+    var modal = document.getElementById('myModal');
+    modal.style.display = 'block';
 }
 
-
-
-// Cerrar el modal
-function closeModal() {
+// Función para cerrar el modal y marcar como visto en localStorage
+function cerrarModal() {
     var modal = document.getElementById('myModal');
     modal.style.display = 'none';
-    localStorage.setItem('modal',true);
+    marcarModalVisto();
 }
+
+// Funciones para gestionar el estado del modal en el almacenamiento local
+function haVistoModal() {
+    return localStorage.getItem('modalVisto') === 'true';
+}
+
+function marcarModalVisto() {
+    localStorage.setItem('modalVisto', 'true');
+}
+
+function acceptTerms() {
+    cerrarModal();
+}
+
 
 function eliminarHijos(elementoPadre) {
     while (elementoPadre.firstChild) {
@@ -279,11 +301,7 @@ function distributionfirst(data) {
     )
 }
 
-// Acción al aceptar los términos
-function acceptTerms() {
-    closeModal(); // Cierra el modal
-    // Agrega aquí cualquier acción adicional que desees realizar después de aceptar los términos.
-}
+
 
 // function validarFormato(inputValue) {
 //     // Verificar si el valor coincide con el formato X/X/X
