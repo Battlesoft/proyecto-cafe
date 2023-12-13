@@ -82,44 +82,6 @@ document.getElementById("agregar-fila").addEventListener("click", function () {
     newTr.appendChild(aulatd);
     newTr.appendChild(deleteTd);
     table.appendChild(newTr);
-    // // Crear un select para el campo de turno
-    // var turnoCell = newRow.insertCell(0);
-    // var turnoSelect = document.createElement("select");
-    // turnoSelect.className = "form-control";
-    // var option1 = document.createElement("option");
-    // option1.value = "M";
-    // option1.text = "M";
-    // var option2 = document.createElement("option");
-    // option2.value = "T";
-    // option2.text = "T";
-    // turnoSelect.appendChild(option1);
-    // turnoSelect.appendChild(option2);
-    // turnoCell.appendChild(turnoSelect);
-
-    // // Agregar el resto de las celdas de entrada de texto, incluyendo el campo de horas
-    // for (var i = 1; i < 7; i++) {
-    //     var cell = newRow.insertCell(i);
-    //     var input = document.createElement("input");
-    //     input.type = "text";
-    //     input.className = "form-control";
-    //     // Si es la columna de horas, agregar la clase "horas" y un evento para actualizar el total
-    //     if (i === 4) {
-    //         input.className += " horas";
-    //         input.addEventListener("input", updateTotalHours);
-    //     }
-    //     cell.appendChild(input);
-    // }
-
-    // var deleteCell = newRow.insertCell(7);
-    // var deleteButton = document.createElement("button");
-    // deleteButton.innerText = "X";
-    // deleteButton.className = "btn btn-danger";
-    // deleteButton.addEventListener("click", function () {
-    //     table.deleteRow(newRow.rowIndex);
-    //     // Actualizar el total cuando se elimina una fila
-    //     updateTotalHours();
-    // });
-    // deleteCell.appendChild(deleteButton);
 });
 
 // Función para calcular el total de horas
@@ -149,12 +111,6 @@ function updateTotalHours() {
 window.addEventListener("load", updateTotalHours);
 
 
-// Función para abrir el modal si no se ha visto antes
-window.onload = function() {
-    if (!haVistoModal()) {
-        mostrarModal();
-    }
-};
 
 // Función para abrir el modal si no se ha visto antes
 window.onload = function() {
@@ -195,42 +151,6 @@ function eliminarHijos(elementoPadre) {
         elementoPadre.removeChild(elementoPadre.firstChild);
     }
 }
-
-// function calcularHoras(numero, elemento) {
-
-//     function encontrarSumas(numero) {
-//         const resultados = [];
-//         function encontrarSumasRecursivo(actual, sumaParcial) {
-//             if (sumaParcial === numero && actual.length <= 4) {
-//                 resultados.push(actual.slice()); // Agregar la combinación actual a los resultados
-//                 return;
-//             }
-//             if (sumaParcial >= numero || actual.length >= 4) {
-//                 return;
-//             }
-//             for (let i = 1; i <= 3; i++) {
-//                     if (actual.length === 0 || i <= actual[actual.length - 1]) {
-//                         actual.push(i);
-//                         encontrarSumasRecursivo(actual, sumaParcial + i);
-//                         actual.pop();
-//                     }
-//                 }
-//             }
-    
-//         encontrarSumasRecursivo([], 0);
-//         return resultados;
-//     }
-
-//     const combinaciones = encontrarSumas(numero);
-//     combinaciones.map((e) => {
-//         let newOpt = document.createElement("option")
-//         newOpt.value = e
-//         e.map((e) => {
-//             newOpt.textContent += e + "+" ;
-//         })
-//         elemento.appendChild(newOpt);
-//     })
-// }
 
 function sumasPosibles(numero) {
     let resultados = [];
@@ -302,28 +222,6 @@ function distributionfirst(data) {
 }
 
 
-
-// function validarFormato(inputValue) {
-//     // Verificar si el valor coincide con el formato X/X/X
-//     const regex = /^\d\/\d\/\d$/; // Asegúrate de que haya barras (/) entre los números
-//     if (!regex.test(inputValue)) {
-//       console.log('El formato no es válido. Debe ser X/X/X');
-//       return;
-//     }
-  
-//     // Separar los números
-//     const numeros = inputValue.split('/').map(Number);
-  
-//     // Verificar si algún número excede 3
-//     const numeroExcedeLimite = numeros.some(numero => numero > 3);
-  
-    // if (numeroExcedeLimite) {
-    //     console.log('Al menos uno de los números excede 3');
-    // } else {
-    //     console.log('Todos los números están dentro del límite (<= 3)');
-    // }
-
-    // Click desplegable tabla
 
 document.getElementById('toggleSection').addEventListener('click', function () {
     var toggleableSection = document.querySelector('.toggleable-section');

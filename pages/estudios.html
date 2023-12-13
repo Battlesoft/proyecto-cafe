@@ -68,54 +68,143 @@
         </nav>
     </header>
     
-    
-    
+
 
     <div class="container departamento">
         <div class="row">
-            <!-- Contenido de Departamentos -->
-            <div class="col-md-12 mb-4">
-                <h2>Información de Departamentos</h2>
-                <div class="mt-4">
-                    <!-- Departamento 1 -->
-                    <h3>Departamento 1</h3>
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Nombre de Docente</th>
-                                <th>Correo Electrónico</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Usuarios del Departamento 1 -->
-                            <tr>
-                                <td>Usuario1</td>
-                                <td>usuario1@example.com</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <!-- Botones a la izquierda con estilo de CRUD -->
+            <div class="col-md-4 mb-4">
+                <section class="crud-section p-3" style="background-color: #f8d7da; border-radius: 8px;">
+                    <h3 class="mb-3">Administrar</h3>
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link active" id="mostrarUsuarios" data-bs-toggle="pill" href="#usuariosContent" role="tab" aria-controls="usuariosContent" aria-selected="true">
+                            Lista de Usuarios
+                        </a>
+                        <a class="nav-link" id="mostrarDepartamentos" data-bs-toggle="pill" href="#departamentosContent" role="tab" aria-controls="departamentosContent" aria-selected="false">
+                            Info de Departamentos
+                        </a>
+                    </div>
+                </section>
+            </div>
+            
+            
 
-                    <!-- Departamento 2 -->
-                    <h3 class="mt-4">Departamento 2</h3>
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Nombre del Docente</th>
-                                <th>Correo Electrónico</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Usuarios del Departamento 2 -->
-                            <tr>
-                                <td>Usuario2</td>
-                                <td>usuario2@example.com</td>
-                            </tr>
-                        </tbody>
-                    </table>
+
+
+            <!-- Contenido a la derecha -->
+            <div class="col-md-8 mb-4 d-flex justify-content-center align-items-center">
+                <!-- CRUD de Usuarios -->
+                <div id="usuariosContent">
+                    <h2>Administrar Usuarios</h2>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
+                        Agregar Usuario
+                    </button>
+                    <div class="mt-4">
+                        <h3>Lista de Usuarios</h3>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Nombre de Usuario</th>
+                                    <th>Correo Electrónico</th>
+                                    <th>Especialidad</th>
+                                    <th>Módulo</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id="enseña_user">Usuario1</td>
+                                    <td id="enseña_email">usuario1@example.com</td>
+                                    <td id="enseña_especialidad">Especialidad1</td>
+                                    <td id="enseña_modulo">Módulo1</td>
+                                    <td>
+                                        <button id="edita_user" class="btn btn-warning">Editar</button>
+                                        <button id="elimina_user" class="btn btn-danger">Eliminar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Información de Departamentos -->
+                <div id="departamentosContent" style="display: none;">
+                    <h2>Información de Departamentos</h2>
+                    <div class="mt-4">
+                        <!-- Departamento 1 -->
+                        <h3 id="nombre_departamento">Departamento 1</h3>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Nombre de Docente</th>
+                                    <th>Correo Electrónico</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Usuarios del Departamento 1 -->
+                                <tr>
+                                    <td id="enseña_user_docente_departamento">Usuario1</td>
+                                    <td id="enseña_email_docente_departamento" >usuario1@example.com</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- Departamento 2 -->
+                        <h3 class="mt-4" id="nombre_departamento">Departamento 2</h3>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Nombre del Docente</th>
+                                    <th>Correo Electrónico</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Usuarios del Departamento 2 -->
+                                <tr>
+                                    <td id="enseña_user_docente_departamento">Usuario2</td>
+                                    <td id="enseña_email_docente_departamento">usuario2@example.com</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+    <div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addUserModalLabel">Agregar Usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="add_user_form">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Nombre de Usuario:</label>
+                            <input type="text" class="form-control" id="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico:</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="specialty" class="form-label">Especialidad:</label>
+                            <select class="form-control" id="specialty" required></select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="departamento" class="form-label">Departamento:</label>
+                            <select class="form-control" id="departamento" required></select>
+                        </div>
+                        <button type="button" class="btn btn-primary">Agregar Usuario</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <footer>
         <div class="container">
@@ -154,12 +243,6 @@
                             <path
                                 d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8" />
                         </svg></a>
-                    <a href="https://www3.gobiernodecanarias.org/medusa/edublog/cifpmajadamarcial/#" target="_blank"
-                        class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                            fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
-                            <path
-                                d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z" />
-                        </svg></a>
                     <a href="https://www.youtube.com/watch?v=gSnUOLJXHhg" target="_blank" class="social-icon"><svg
                             xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-youtube" viewBox="0 0 16 16">
@@ -170,7 +253,8 @@
             </div>
         </div>
     </footer>
-<!-- ----------------------------------------------------------------------------------------------- -->
+
+    <!-- -------------------------------------------------------------------------------------------------------------------------- -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
@@ -178,6 +262,18 @@
 
     <script src="../scripts/indexscript.js"></script>
 
+    <script>
+        // Script para mostrar/ocultar tablas al hacer clic en los botones
+        document.getElementById('mostrarUsuarios').addEventListener('click', function () {
+            document.getElementById('usuariosContent').style.display = 'block';
+            document.getElementById('departamentosContent').style.display = 'none';
+        });
+
+        document.getElementById('mostrarDepartamentos').addEventListener('click', function () {
+            document.getElementById('usuariosContent').style.display = 'none';
+            document.getElementById('departamentosContent').style.display = 'block';
+        });
+    </script>
 </body>
 
 </html>
