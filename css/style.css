@@ -113,13 +113,9 @@ footer a {
 
 /*boton ingresar*/
 .home .btn-primary {
-    background-color: rgb(133, 215, 133);
     border: none;
     border-radius: 5px;
-}
-
-.home .btn-primary:hover {
-    background-color: #0056b3;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 /*--------------------------------------------------------------------------*/
@@ -326,11 +322,3 @@ footer a {
     font-size: 18px;
     line-height: 1.5;
 }
-
-
-/*--------------------------------------------------------------------------*/
-
-/*ESTUDIOS*/
-
-/*--------------------------------------------------------------------------*/
-
