@@ -71,7 +71,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
 
-                                    <li><a class="dropdown-item" href="#">Cerrar sesión
+                                    <li><a class="dropdown-item" id="cerrar_sesión" href="#">Cerrar sesión
 
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-door-open" viewBox="0 0 16 16">
@@ -252,25 +252,30 @@
                         <div class="mb-3">
                             <!--DOCENTE-->
                             <label for="username" class="form-label">Nombre del Docente:</label>
-                            <input type="text" class="form-control" id="username" required>
+                            <input type="text" class="form-control" id="add_name_user" required>
                         </div>
                         <div class="mb-3">
                             <!--EMAIL-->
                             <label for="email" class="form-label">Correo Electrónico:</label>
-                            <input type="email" class="form-control" id="email" required>
+                            <input type="email" class="form-control" id="add_email_user" required>
                         </div>
                         <div class="mb-3">
                             <!--ESPECIALIDAD ASOCIADO/A-->
                             <label for="specialty" class="form-label">Especialidad:</label>
-                            <select class="form-control" id="specialty" required></select>
+                            <select class="form-control" id="add_specialty_user" required></select>
                         </div>
                         <div class="mb-3">
                             <!--DEPARTAMENTEO ASOCIADO/A-->
                             <label for="departamento" class="form-label">Departamento:</label>
-                            <select class="form-control" id="departamento" required></select>
+                            <select class="form-control" id="add_departamento_user" required></select>
                         </div>
                         <!--AGREGAR DOCENTE-->
-                        <button type="button" class="btn btn-primary">Agregar Docente</button>
+                        <button type="button" class="btn btn-primary" id="add_user">Agregar Docente
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-add" viewBox="0 0 16 16">
+                                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
+                                <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1z"/>
+                            </svg>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -291,25 +296,25 @@
                         <div class="mb-3">
                             <!--DOCENTE-->
                             <label for="username" class="form-label">Nombre del Docente:</label>
-                            <input type="text" class="form-control" id="username" required>
+                            <input type="text" class="form-control" id="edit_username_user" required>
                         </div>
                         <div class="mb-3">
                             <!--EMAIL-->
                             <label for="email" class="form-label">Correo Electrónico:</label>
-                            <input type="email" class="form-control" id="email" required>
+                            <input type="email" class="form-control" id="edit_email_user" required>
                         </div>
                         <div class="mb-3">
                             <!--ESPECIALIDAD ASOCIADO/A-->
                             <label for="specialty" class="form-label">Especialidad:</label>
-                            <select class="form-control" id="specialty" required></select>
+                            <select class="form-control" id="edit_specialty_user" required></select>
                         </div>
                         <div class="mb-3">
                             <!--DEPARTAMENTEO ASOCIADO/A-->
                             <label for="departamento" class="form-label">Departamento:</label>
-                            <select class="form-control" id="departamento" required></select>
+                            <select class="form-control" id="edit_departamento_user" required></select>
                         </div>
                         <!--AGREGAR DOCENTE-->
-                        <button type="button" class="btn btn-primary">Confirmar Edición</button>
+                        <button type="button" id="confirm_edit_user" class="btn btn-primary">Confirmar Edición</button>
                     </form>
                 </div>
             </div>
@@ -329,7 +334,7 @@
                     <form id="edit_user_form">
 
                         <!--ELIMINAR DOCENTE-->
-                        <button type="button" class="btn btn-danger">Confirmar
+                        <button type="button" id="confirm_delete_user"class="btn btn-danger">Confirmar
 
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-dash" viewBox="0 0 16 16">
                                 <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7M11 12h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1 0-1m0-7a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
